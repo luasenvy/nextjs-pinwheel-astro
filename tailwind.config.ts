@@ -32,8 +32,8 @@ export default {
     extend: {
       colors: {
         text: "#888888",
-        light: "#222",
-        dark: "#ceced0",
+        light: "#ceced0",
+        dark: "#222",
         primary: "#FE6019",
         secondary: "#FEE140",
         body: "#fafafa",

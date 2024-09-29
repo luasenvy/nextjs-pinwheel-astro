@@ -1,5 +1,6 @@
 "use client";
 
+import classNames from "classnames";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -142,7 +143,7 @@ export default function Header() {
           className="navbar-nav order-3 hidden w-full lg:order-1 lg:flex lg:w-auto lg:space-x-2"
         >
           {main.map((menu, i) =>
-            menu.hasChildren && !dropdownHidden ? (
+            menu.hasChildren ? (
               <li
                 key={`nav-item-${i}`}
                 className="nav-item nav-dropdown group relative cursor-pointer  dropdown-button"
@@ -163,7 +164,10 @@ export default function Header() {
                 </span>
                 <ul
                   id="dropdown"
-                  className="nav-dropdown-list mx-auto hidden duration-300 lg:invisible lg:absolute lg:block lg:h-auto lg:w-[13.5rem] lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100"
+                  className={classNames(
+                    "nav-dropdown-list mx-auto hidden duration-300 lg:invisible lg:absolute lg:block lg:h-auto lg:w-[13.5rem] lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100",
+                    { hidden: !dropdownHidden }
+                  )}
                 >
                   {menu.children?.map((child, i) => (
                     <li key={`nav-item-child-${i}`} className="nav-dropdown-item">

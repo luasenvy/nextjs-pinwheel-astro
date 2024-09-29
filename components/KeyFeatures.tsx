@@ -27,10 +27,10 @@ export default function KeyFeatures({ title, description, featureList }: KeyFeat
       <div className="container">
         <div className="row justify-between text-center lg:text-start">
           <div className="lg:col-5">
-            <h2>{parseInline(title)}</h2>
+            <h2>{(parseInline(title) as string).replace("&amp;", "&")}</h2>
           </div>
           <div className="mt-6 lg:col-5 lg:mt-0">
-            <p>{parseInline(description)}</p>
+            <p>{(parseInline(description) as string).replace("&amp;", "&")}</p>
           </div>
         </div>
 

@@ -11,7 +11,7 @@ interface LogoProps {
 export default function Logo({ src }: LogoProps) {
   return (
     <Link href="/" className="navbar-brand block">
-      <Image width={147 * 2} height={31 * 2} src={src ?? logo} alt="Pinwheel Astro" />
+      <Image width={147} height={31} src={src ?? logo} alt="Pinwheel Astro" />
     </Link>
   );
 }

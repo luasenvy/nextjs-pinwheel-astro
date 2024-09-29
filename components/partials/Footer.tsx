@@ -111,7 +111,9 @@ export default function Footer() {
       </div>
       <div className="container max-w-[1440px]">
         <div className="footer-copyright mx-auto border-t border-border pb-10 pt-7 text-center">
-          <p className="content text-text">{parseInline(copyright) as React.ReactNode}</p>
+          <p className="content text-text">
+            {(parseInline(copyright) as string).replace("&amp;", "&")}
+          </p>
         </div>
       </div>
     </footer>
