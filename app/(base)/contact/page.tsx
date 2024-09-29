@@ -2,6 +2,9 @@ import Image from "next/image";
 
 import PageHeader from "@/components/PageHeader";
 
+import ContactImage from "@/public/images/contact-img.png";
+import Shape2Image from "@/public/images/shape-2.png";
+
 const contact = {
   title: "Contact",
   page_title: "Get’n touch with Our\nPinwheel team",
@@ -22,10 +25,10 @@ export default function Contact() {
           <div className="row">
             <div className="mb-10 text-center md:col-6 md:order-2 md:mb-0 md:pt-9">
               <div className="contact-img relative inline-flex pb-5 pl-5">
-                <Image src="/images/contact-img.png" height={544} width={500} alt="" />
+                <Image src={ContactImage} height={544} width={500} alt="" />
                 <Image
                   className="absolute bottom-0 left-0 -z-[1] h-14 w-14"
-                  src="/images/shape-2.png"
+                  src={Shape2Image}
                   alt=""
                   height={56}
                   width={56}

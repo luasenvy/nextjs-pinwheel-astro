@@ -50,9 +50,9 @@ export default function FeatureBanner({ title, banner }: FeatureBannerProps) {
             <h1>{banner.title}</h1>
             <p className="mt-6">{banner.content}</p>
             {banner.button.enable && (
-              <a className="btn btn-primary mt-6" href={banner.button.link}>
+              <Link className="btn btn-primary mt-6" href={banner.button.link}>
                 {banner.button.label}
-              </a>
+              </Link>
             )}
           </div>
           <div className="lg:col-6 lg:order-2">
