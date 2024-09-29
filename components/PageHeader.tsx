@@ -14,10 +14,10 @@ interface HeaderItem {
 
 export interface PageHeaderProps {
   title: string;
-  index_title?: string;
   page_title?: string;
-  slug: string;
   content: string;
+  index_title?: string;
+  slug: string;
   buttons?: Array<HeaderItem>;
 }
 
