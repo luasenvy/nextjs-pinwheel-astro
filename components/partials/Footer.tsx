@@ -1,9 +1,7 @@
-import { parseInline } from "marked";
-
 import Link from "next/link";
 
 import Logo from "@/components/Logo";
-import Social, { type IconName, type SocialProps } from "@/components/Social";
+import Social, { type IconName } from "@/components/Social";
 
 const footer = [
   {
@@ -63,7 +61,6 @@ const footerDescription =
 const email = "info@andromeda.io";
 const location = "2118 Thornridge Cir. Syracuse, Connecticut 35624";
 const phone = "+704-555-0127";
-const copyright = "Copyright © 2023 a theme by [Themefisher](https://themefisher.com)";
 
 export default function Footer() {
   return (
@@ -112,7 +109,10 @@ export default function Footer() {
       <div className="container max-w-[1440px]">
         <div className="footer-copyright mx-auto border-t border-border pb-10 pt-7 text-center">
           <p className="content text-text">
-            {(parseInline(copyright) as string).replace("&amp;", "&")}
+            Copyright &copy; 2023 a theme by{" "}
+            <Link href="https://themefisher.com" target="_blank">
+              Themefisher
+            </Link>
           </p>
         </div>
       </div>
