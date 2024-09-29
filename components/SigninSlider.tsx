@@ -1,6 +1,7 @@
 "use client";
 
-import { parse } from "marked";
+import { parseInline } from "marked";
+import Image from "next/image";
 import React, { useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import SwiperCore from "swiper";
@@ -8,6 +9,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+
+import LoginBannerImage from "@/public/images/login-banner-bg.png";
+import SignupCarouselImg1Image from "@/public/images/signup-carousel-img-1.png";
 
 interface SigninSliderProps {
   title: string;
@@ -21,13 +25,13 @@ export default function SigninSlider({ title }: SigninSliderProps) {
 
   return (
     <div className="auth-banner bg-gradient flex flex-col items-center justify-center py-16 lg:col-6 lg:block">
-      <img
-        className="absolute left-0 top-0 h-full w-full"
-        src="/images/login-banner-bg.png"
-        alt=""
-      />
+      <Image className="absolute left-0 top-0 h-full w-full" src={LoginBannerImage} alt="" />
       <div className="w-full text-center">
-        <h2 className="h3 text-white">{parse(title) as string}</h2>
+        {title.split("\\n").map((text, i) => (
+          <h2 key={i} className="h3 text-white">
+            {parseInline(text) as string}
+          </h2>
+        ))}
 
         <div className="auth-banner-carousel">
           <Swiper
@@ -43,29 +47,29 @@ export default function SigninSlider({ title }: SigninSliderProps) {
             slidesPerView={1}
           >
             <SwiperSlide key={"feature-" + 0}>
-              <img
-                width="667"
-                height="557"
+              <Image
+                width={667}
+                height={557}
                 className="mx-auto"
-                src="/images/signup-carousel-img-1.png"
+                src={SignupCarouselImg1Image}
                 alt=""
               />
             </SwiperSlide>
             <SwiperSlide key={"feature-" + 1}>
-              <img
-                width="667"
-                height="557"
+              <Image
+                width={667}
+                height={557}
                 className="mx-auto"
-                src="/images/signup-carousel-img-1.png"
+                src={SignupCarouselImg1Image}
                 alt=""
               />
             </SwiperSlide>
             <SwiperSlide key={"feature-" + 2}>
-              <img
-                width="667"
-                height="557"
+              <Image
+                width={667}
+                height={557}
                 className="mx-auto"
-                src="/images/signup-carousel-img-1.png"
+                src={SignupCarouselImg1Image}
                 alt=""
               />
             </SwiperSlide>

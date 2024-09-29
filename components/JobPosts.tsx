@@ -1,6 +1,7 @@
 "use client";
 
 import { marked } from "marked";
+import Link from "next/link";
 import { useState } from "react";
 
 import { AiOutlineArrowRight } from "react-icons/ai";
@@ -101,13 +102,13 @@ export default function JobPosts({
                     {post.location}
                   </li>
                   <li className="my-1 mr-8">
-                    <a
+                    <Link
                       className="inline-flex items-center font-semibold text-primary"
                       href={`/career/${post.slug}`}
                     >
                       Read More
                       <AiOutlineArrowRight className="ml-1.5 text-xl font-bold" />
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

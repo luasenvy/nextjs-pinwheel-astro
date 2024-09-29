@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import * as Icon from "react-feather";
 import { BsPinAngleFill } from "react-icons/bs";
@@ -61,15 +62,15 @@ export default function PricingCard({
           </ul>
         </div>
         <div className="text-center">
-          <a
+          <Link
             className={`btn ${
               featured ? "btn-primary" : "btn-outline-white"
             } block h-[48px] w-full rounded-[50px] leading-[30px]`}
             href={buttons.buy_now.link}
           >
             {buttons.buy_now.label}
-          </a>
-          <a className="mt-6 inline-flex items-center text-dark" href={buttons.free_trial.link}>
+          </Link>
+          <Link className="mt-6 inline-flex items-center text-dark" href={buttons.free_trial.link}>
             {buttons.free_trial.label}
             <svg
               className="ml-1.5"
@@ -84,7 +85,7 @@ export default function PricingCard({
                 fill="currentColor"
               ></path>
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

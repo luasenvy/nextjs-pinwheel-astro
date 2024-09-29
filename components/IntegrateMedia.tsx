@@ -3,6 +3,7 @@
 import classnames from "classnames";
 import { parseInline } from "marked";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
 import { AiOutlineArrowRight } from "react-icons/ai";
@@ -69,13 +70,13 @@ export default function IntegrateMedia({ integrations, categories }: IntegrateMe
                   <p>{parseInline(excerpt.slice(0, 80))}</p>
                 </div>
 
-                <a
+                <Link
                   className="group inline-flex items-center font-semibold text-dark hover:text-primary"
                   href={`/integrations/${slug}`}
                 >
                   View integration
                   <AiOutlineArrowRight className="ml-1.5 text-xl font-bold duration-300 group-hover:ml-3" />
-                </a>
+                </Link>
               </div>
             </div>
           ))}
