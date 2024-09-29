@@ -41,7 +41,7 @@ const about: PageHeaderProps = {
 
 const gallery: GalleryProps = {
   title: "We started with one single goal Empower entrepreneurs",
-  images: [gallery1Image, gallery2Image, gallery3Image],
+  images: [gallery1Image, gallery3Image, gallery2Image],
 };
 
 const counter: CounterComponentProps = {

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import GradientNumberBgImage from "@/public/images/gradient-number-bg.png";
+
 interface FeatureItem {
   title: string;
   content: string;
@@ -48,7 +50,7 @@ export default function Works({ features }: WorksProps) {
                   <span className="bg-gradient absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                     {i > 8 ? i + 1 : `0${i + 1}`}
                   </span>
-                  <Image height={90} width={90} src="/images/gradient-number-bg.png" alt="" />
+                  <Image height={90} width={90} src={GradientNumberBgImage} alt="" />
                 </div>
                 <h4 className="my-6">{title}</h4>
                 <p>{content}</p>
