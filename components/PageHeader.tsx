@@ -14,10 +14,10 @@ interface HeaderItem {
 
 export interface PageHeaderProps {
   title: string;
+  content?: string;
   page_title?: string;
-  content: string;
   index_title?: string;
-  slug: string;
+  slug?: string;
   buttons?: Array<HeaderItem>;
 }
 
@@ -57,18 +57,27 @@ export default function PageHeader({
               <Link href={`/${slugify(index_title)}`} className="text-primary">
                 {index_title}
               </Link>{" "}
-              / {page_title ? page_title : humanize(slug.replace("page /", ""))}
+              / {page_title ? page_title : slug ? humanize(slug.replace("page /", "")) : undefined}
             </span>
           ) : (
             <span className="text-sm leading-none">/ {title}</span>
           )}
         </li>
       </ul>
-      <h1 className="mb-5 mt-8">
-        {(parseInline(page_title ? page_title : title) as string).replace("&amp;", "&")}
-      </h1>
 
-      <p>{(parseInline(content) as string).replace("&amp;", "&")}</p>
+      {(() => {
+        const t = page_title ? page_title : title;
+        return t.split("\n").map((text, i) => (
+          <h1 className="mb-5 mt-8" key={i}>
+            {(parseInline(text) as string).replace("&amp;", "&")}
+          </h1>
+        ));
+      })()}
+
+      {content &&
+        content
+          .split("\n")
+          .map((text, i) => <p key={i}>{(parseInline(text) as string).replace("&amp;", "&")}</p>)}
 
       {buttons && (
         <div className="mt-11 justify-center sm:flex">
