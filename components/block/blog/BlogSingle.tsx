@@ -46,7 +46,11 @@ export default function BlogSingle({ post }: BlogSingleProps) {
                 <li className="mr-4 inline-block">
                   <FaRegFolder className="mr-2 -mt-1 inline-block" />
                   {categories.map((category: string, index: number) => (
-                    <Link href={`/categories/${slugify(category)}`} className="hover:text-primary">
+                    <Link
+                      key={`view-cat-link-${index}`}
+                      href={`/categories/${slugify(category)}`}
+                      className="hover:text-primary"
+                    >
                       {humanize(category)}
                       {index !== categories.length - 1 && ","}
                     </Link>

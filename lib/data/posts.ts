@@ -32,7 +32,7 @@ Senectus feugiat faucibus commodo egestas leo vitae in morbi. Enim arcu dignissi
 export interface PostItem {
   title: string;
   subtitle: string;
-  slug: string;
+  slug: number;
   image: StaticImageData;
   author: string;
   date: string;
@@ -44,6 +44,7 @@ export interface PostItem {
 
 export const posts = [
   {
+    slug: 5,
     title: "How Video Analytics Can Help Understand and Increase",
     subtitle,
     image: Post5Image,
@@ -55,6 +56,7 @@ export const posts = [
     content,
   },
   {
+    slug: 6,
     title: "Keep on Top of your To-Do List With Slick New Comment",
     subtitle,
     image: Post6Image,
@@ -66,6 +68,7 @@ export const posts = [
     content,
   },
   {
+    slug: 7,
     title: "6 Product Launch Email Examples You’ll Want to Steal",
     subtitle,
     image: Post7Image,
@@ -77,6 +80,7 @@ export const posts = [
     content,
   },
   {
+    slug: 9,
     title: "6 Product Launch Email Examples You’ll Want to Steal",
     subtitle,
     image: Post9Image,
@@ -88,6 +92,7 @@ export const posts = [
     content,
   },
   {
+    slug: 8,
     title: "Keep on Top of your To-Do List With Slick New Comment",
     subtitle,
     image: Post8Image,
@@ -99,6 +104,7 @@ export const posts = [
     content,
   },
   {
+    slug: 10,
     title: "6 Product Launch Email Examples You’ll Want to Steal",
     subtitle,
     image: Post10Image,
@@ -110,6 +116,7 @@ export const posts = [
     content,
   },
   {
+    slug: 11,
     title: "6 Product Launch Email Examples You’ll Want to Steal",
     subtitle,
     image: Post11Image,
@@ -121,6 +128,7 @@ export const posts = [
     content,
   },
   {
+    slug: 12,
     title: "6 Product Launch Email Examples You’ll Want to Steal",
     subtitle,
     image: Post12Image,
@@ -132,6 +140,7 @@ export const posts = [
     content,
   },
   {
+    slug: 1,
     title: "6 Product Launch Email Examples You’ll Want to Steal",
     subtitle,
     image: Post1Image,
@@ -143,6 +152,7 @@ export const posts = [
     content,
   },
   {
+    slug: 2,
     title: "6 Product Launch Email Examples You’ll Want to Steal",
     subtitle,
     image: Post2Image,
@@ -154,6 +164,7 @@ export const posts = [
     content,
   },
   {
+    slug: 3,
     title: "6 Product Launch Email Examples You’ll Want to Steal",
     subtitle,
     image: Post3Image,
@@ -165,6 +176,7 @@ export const posts = [
     content,
   },
   {
+    slug: 4,
     title: "6 Product Launch Email Examples You’ll Want to Steal",
     subtitle,
     image: Post4Image,
@@ -175,11 +187,9 @@ export const posts = [
     draft: false,
     content,
   },
-]
-  .map((post, i) => ({ ...post, slug: `${i}` }))
-  .toSorted(
-    ({ date: a }, { date: b }) => new Date(b).getTime() - new Date(a).getTime()
-  ) as Array<PostItem>;
+].toSorted(
+  ({ date: a }, { date: b }) => new Date(b).getTime() - new Date(a).getTime()
+) as Array<PostItem>;
 
 export const categories = Array.from(
   posts.reduce(
