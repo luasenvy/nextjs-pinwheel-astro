@@ -112,6 +112,10 @@ export default function Footer() {
             Copyright &copy; 2023 a theme by{" "}
             <Link href="https://themefisher.com" target="_blank">
               Themefisher
+            </Link>{" "}
+            &amp; writed nextjs by{" "}
+            <Link href="https://www.luas.kr" target="_blank">
+              luasenvy
             </Link>
           </p>
         </div>
