@@ -1,8 +1,6 @@
 "use client";
 
-import type { SwiperWiper } from "./TestimonialSlider";
-
-import TestimonialSlider from "@/components/TestimonialSlider";
+import TestimonialSlider, { type SwiperWiper } from "@/components/block/home/TestimonialSlider";
 
 export interface TestimonialProps {
   title: string;

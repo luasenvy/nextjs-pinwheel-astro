@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import SigninSlider from "@/components/SigninSlider";
+import SigninSlider from "@/components/block/auth/SigninSlider";
 
 import FlowerImage from "@/public/images/flower.png";
 

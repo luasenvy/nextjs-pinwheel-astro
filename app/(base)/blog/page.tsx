@@ -1,12 +1,12 @@
-import BlogCategories from "@/components/BlogCategories";
-import Blogs from "@/components/Blogs";
-import FeaturedBlog from "@/components/FeaturedBlog";
-import PageHeader from "@/components/PageHeader";
 import Pagination from "@/components/Pagination";
 import Shape from "@/components/Shape";
+import Cta from "@/components/block/Cta";
+import PageHeader from "@/components/block/PageHeader";
+import BlogCategories from "@/components/block/blog/BlogCategories";
+import Blogs from "@/components/block/blog/Blogs";
+import FeaturedBlog from "@/components/block/blog/FeaturedBlog";
 
-import Cta from "@/components/partials/Cta";
-import posts from "@/lib/posts";
+import posts from "@/lib/data/posts";
 
 const blog_folder = "blog";
 const pagination = 6;

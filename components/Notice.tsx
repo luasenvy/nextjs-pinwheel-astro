@@ -1,3 +1,5 @@
+import classnames from "classnames";
+
 interface NoticeProps {
   type: "info" | "warning" | "danger" | "note" | "tip";
   children: React.ReactNode;
@@ -5,7 +7,7 @@ interface NoticeProps {
 
 export default function Notice({ type, children }: NoticeProps) {
   return (
-    <div className={`notice ${type} relative mb-8 `}>
+    <div className={classnames("notice relative mb-8", type)}>
       <div className="notice-head absolute top-0 left-0 z-10 flex h-[30px] w-full items-center rounded-t-md px-3">
         <svg width="16px" height="16px" viewBox="0 0 512 512">
           <path

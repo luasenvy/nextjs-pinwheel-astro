@@ -3,9 +3,9 @@ import Image from "next/image";
 
 import { AiFillCheckCircle } from "react-icons/ai";
 
-import PageHeader from "@/components/PageHeader";
 import Shape from "@/components/Shape";
-import Cta from "@/components/partials/Cta";
+import Cta from "@/components/block/Cta";
+import PageHeader from "@/components/block/PageHeader";
 
 import AwardsImage from "@/public/images/how-it-work/awards.png";
 

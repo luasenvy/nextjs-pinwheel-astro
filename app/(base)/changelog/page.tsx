@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 import Badge from "@/components/Badge";
-import Changelog from "@/components/Changelog";
-import PageHeader from "@/components/PageHeader";
 import Shape from "@/components/Shape";
+import PageHeader from "@/components/block/PageHeader";
+import ChangelogCard from "@/components/block/changelog/ChangelogCard";
 
 const changelog = {
   title: "Changelog",
@@ -19,7 +19,7 @@ export default function ChangelogPage() {
         </div>
       </section>
 
-      <Changelog date="v1.0.4 (January 19,2020)">
+      <ChangelogCard date="v1.0.4 (January 19,2020)">
         <Badge type="changed">changed</Badge>
 
         <ul className="my-5" style={{ paddingInlineStart: "1.625em" }}>
@@ -116,9 +116,9 @@ export default function ChangelogPage() {
           This is the start of dummy description text. You can change it whenever you want. This is
           the start of dummy description text. You can change it whenever you want.
         </p>
-      </Changelog>
+      </ChangelogCard>
 
-      <Changelog date="v1.0.3 (October 23,2019)">
+      <ChangelogCard date="v1.0.3 (October 23,2019)">
         <Badge type="changed">changed</Badge>
 
         <ul className="my-5" style={{ paddingInlineStart: "1.625em" }}>
@@ -207,9 +207,9 @@ export default function ChangelogPage() {
           </li>
           <li>News and requests for agreement Process transactions.</li>
         </ul>
-      </Changelog>
+      </ChangelogCard>
 
-      <Changelog date="v1.0.2 (May 19,2019)">
+      <ChangelogCard date="v1.0.2 (May 19,2019)">
         <Badge type="changed">changed</Badge>
 
         <ul className="my-5" style={{ paddingInlineStart: "1.625em" }}>
@@ -299,9 +299,9 @@ export default function ChangelogPage() {
           </li>
           <li>News and requests for agreement Process transactions.</li>
         </ul>
-      </Changelog>
+      </ChangelogCard>
 
-      <Changelog date="v1.0.1 (March 15,2019)">
+      <ChangelogCard date="v1.0.1 (March 15,2019)">
         <Badge type="depreciate">depreciate</Badge>
         <ul className="my-5" style={{ paddingInlineStart: "1.625em" }}>
           <li>
@@ -389,9 +389,9 @@ export default function ChangelogPage() {
           </li>
           <li>News and requests for agreement Process transactions.</li>
         </ul>
-      </Changelog>
+      </ChangelogCard>
 
-      <Changelog date="v1.0 (January 01,2019)">
+      <ChangelogCard date="v1.0 (January 01,2019)">
         <Badge type="remove">removed</Badge>
         <ul className="my-5" style={{ paddingInlineStart: "1.625em" }}>
           <li>
@@ -479,7 +479,7 @@ export default function ChangelogPage() {
           </li>
           <li>News and requests for agreement Process transactions.</li>
         </ul>
-      </Changelog>
+      </ChangelogCard>
     </>
   );
 }

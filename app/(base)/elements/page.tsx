@@ -4,11 +4,11 @@ import Link from "next/link";
 import Accordion from "@/components/Accordion";
 import Button from "@/components/Button";
 import Notice from "@/components/Notice";
-import PageHeader from "@/components/PageHeader";
 import Shape from "@/components/Shape";
-import Tabs from "@/components/Tabs";
-import Video from "@/components/VideoComponent";
-import Youtube from "@/components/Youtube";
+import PageHeader from "@/components/block/PageHeader";
+import Video from "@/components/block/Video";
+import Youtube from "@/components/block/Youtube";
+import Tabs from "@/components/block/elements/Tabs";
 
 import FlowerImage from "@/public/images/flower.jpg";
 import IntroThumbnailImage from "@/public/images/intro-thumbnail.png";

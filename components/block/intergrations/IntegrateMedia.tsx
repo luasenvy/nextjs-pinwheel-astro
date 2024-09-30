@@ -8,7 +8,7 @@ import React, { useState } from "react";
 
 import { AiOutlineArrowRight } from "react-icons/ai";
 
-import type { IntegrationItem } from "@/lib/integrations";
+import type { IntegrationItem } from "@/lib/data/integrations";
 import { humanize } from "@/lib/textConverter";
 
 export interface IntegrateMediaProps {

@@ -4,12 +4,12 @@ import { slug as slugify } from "github-slugger";
 
 import { useParams } from "next/navigation";
 
-import BlogCategories from "@/components/BlogCategories";
-import Blogs from "@/components/Blogs";
-import PageHeader from "@/components/PageHeader";
 import Shape from "@/components/Shape";
+import PageHeader from "@/components/block/PageHeader";
+import BlogCategories from "@/components/block/blog/BlogCategories";
+import Blogs from "@/components/block/blog/Blogs";
 
-import posts, { type PostItem } from "@/lib/posts";
+import posts, { type PostItem } from "@/lib/data/posts";
 import { humanize } from "@/lib/textConverter";
 
 const categories = posts.reduce(

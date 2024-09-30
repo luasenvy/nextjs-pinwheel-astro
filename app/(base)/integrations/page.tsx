@@ -1,10 +1,9 @@
-import IntegrateMedia from "@/components/IntegrateMedia";
-import PageHeader from "@/components/PageHeader";
 import Shape from "@/components/Shape";
+import Cta from "@/components/block/Cta";
+import PageHeader from "@/components/block/PageHeader";
+import IntegrateMedia from "@/components/block/intergrations/IntegrateMedia";
 
-import Cta from "@/components/partials/Cta";
-
-import integrations from "@/lib/integrations";
+import integrations from "@/lib/data/integrations";
 
 const integration = {
   title: "Integrations",

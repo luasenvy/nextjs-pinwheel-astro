@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Play } from "react-feather";
 import YouTube from "react-youtube";
 
-interface VideoComponentProps {
+interface VideoProps {
   height: number;
   width: number;
   src: StaticImageData;
@@ -15,7 +15,7 @@ interface VideoComponentProps {
   video_width: string;
 }
 
-export default function VideoComponent({
+export default function Video({
   height,
   width,
   src,
@@ -23,7 +23,7 @@ export default function VideoComponent({
   video_id,
   video_height,
   video_width,
-}: VideoComponentProps) {
+}: VideoProps) {
   const [play, setPlay] = useState(false);
   const videoOptions = { borderRadius: "16px", playerVars: { autoplay: 1 } };
 

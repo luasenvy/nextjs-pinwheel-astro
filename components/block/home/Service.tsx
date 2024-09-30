@@ -6,10 +6,8 @@ import type { StaticImageData } from "next/image";
 import Link from "next/link";
 import { AiFillCheckCircle } from "react-icons/ai";
 
-import type { HomepageTabProps } from "./HomepageTab";
-
-import HomepageTab from "@/components/HomepageTab";
-import VideoComponent from "@/components/VideoComponent";
+import Video from "@/components/block/Video";
+import HomepageTab, { type HomepageTabProps } from "@/components/block/home/HomepageTab";
 
 import Shape2Image from "@/public/images/shape-2.png";
 
@@ -62,7 +60,7 @@ export default function Service({ homepage_tab, our_service }: ServiceProps) {
                 </div>
               )}
               {video && (
-                <VideoComponent
+                <Video
                   src={video.thumbnail}
                   height={370}
                   width={700}

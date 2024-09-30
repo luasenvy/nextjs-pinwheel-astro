@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import PageHeader from "@/components/PageHeader";
+import PageHeader from "@/components/block/PageHeader";
 
 import ContactImage from "@/public/images/contact-img.png";
 import Shape2Image from "@/public/images/shape-2.png";

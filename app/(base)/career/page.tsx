@@ -1,15 +1,13 @@
 import Image from "next/image";
 import type * as Icon from "react-feather";
 
-import type { CareerBenefitsProps } from "@/components/CareerBenefits";
-import CareerBenefits from "@/components/CareerBenefits";
-import JobPosts from "@/components/JobPosts";
-import PageHeader from "@/components/PageHeader";
 import Shape from "@/components/Shape";
+import Cta from "@/components/block/Cta";
+import PageHeader from "@/components/block/PageHeader";
+import CareerBenefits, { type CareerBenefitsProps } from "@/components/block/career/CareerBenefits";
+import JobPosts from "@/components/block/career/JobPosts";
 
-import Cta from "@/components/partials/Cta";
-
-import careers from "@/lib/careers";
+import careers from "@/lib/data/careers";
 import CarrerHeroImage from "@/public/images/career/career-hero-image.png";
 
 const categories = careers.reduce(

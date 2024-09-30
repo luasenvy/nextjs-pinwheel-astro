@@ -43,7 +43,7 @@ export default function Pagination({ section, currentPage, totalPages }: Paginat
             <span>Previous</span>
           </Link>
         ) : (
-          <span className="  mr-5 flex min-w-[150px] items-center rounded-[50px] border-white bg-white px-4 py-2 text-center capitalize text-text md:px-6 md:py-3 ">
+          <span className="mr-5 flex min-w-[150px] items-center rounded-[50px] border-white bg-white px-4 py-2 text-center capitalize text-text md:px-6 md:py-3 ">
             <svg
               className="h-4 w-4"
               xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +107,7 @@ export default function Pagination({ section, currentPage, totalPages }: Paginat
             </svg>
           </Link>
         ) : (
-          <span className="  ml-5 flex min-w-0 items-center rounded-[50px]  border-white bg-white px-4 py-2 text-center capitalize text-text md:px-6 md:py-3 ">
+          <span className="ml-5 flex min-w-0 items-center rounded-[50px]  border-white bg-white px-4 py-2 text-center capitalize text-text md:px-6 md:py-3 ">
             <span>Next</span>
             <svg
               className="h-5 w-5"

@@ -3,7 +3,7 @@ import React from "react";
 import * as Icon from "react-feather";
 import { BsPinAngleFill } from "react-icons/bs";
 
-import type { PricingItem } from "@/lib/pricings";
+import type { PricingItem } from "@/lib/data/pricings";
 import { humanize } from "@/lib/textConverter";
 
 export default function PricingCard({

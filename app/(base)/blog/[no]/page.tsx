@@ -1,6 +1,6 @@
-import BlogSingle from "@/components/BlogSingle";
-import posts from "@/lib/posts";
-import type { PostItem } from "@/lib/posts";
+import BlogSingle from "@/components/block/blog/BlogSingle";
+import posts from "@/lib/data/posts";
+import type { PostItem } from "@/lib/data/posts";
 
 export interface BlogViewProps {
   post: PostItem;

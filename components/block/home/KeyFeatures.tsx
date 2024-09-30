@@ -1,9 +1,7 @@
 import { parseInline } from "marked";
 import Image from "next/image";
 
-import type { FeatureItem } from "./HomepageFeature";
-
-import HomapageFeature from "@/components/HomepageFeature";
+import HomapageFeature, { type FeatureItem } from "@/components/block/home/HomepageFeature";
 
 import FeatureShapeImage from "@/public/images/feature-shape.png";
 

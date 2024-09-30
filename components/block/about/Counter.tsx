@@ -1,4 +1,4 @@
-import Counter from "./Counter";
+import CountupValue from "@/components/CountupValue";
 
 interface CounterItem {
   number: number;
@@ -7,13 +7,13 @@ interface CounterItem {
   color: string;
 }
 
-export interface CounterComponentProps {
+export interface CounterProps {
   counter: Array<CounterItem>;
 }
 
 const speed = 700;
 
-export default function CounterComponent({ counter }: CounterComponentProps) {
+export default function Counter({ counter }: CounterProps) {
   return (
     <div className="counter mt-16">
       <div className="row mx-0 rounded-[20px] bg-white px-10 shadow-lg lg:py-10">
@@ -23,7 +23,7 @@ export default function CounterComponent({ counter }: CounterComponentProps) {
             className="border-border sm:col-6 lg:col-3 px-10 py-10 text-center lg:border-r lg:py-0 last:lg:border-none"
           >
             <h2>
-              <Counter speed={speed} number={number} />
+              <CountupValue speed={speed} number={number} />
               <span className="text-primary" style={{ color }}>
                 +
               </span>

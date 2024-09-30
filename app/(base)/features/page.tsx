@@ -1,9 +1,9 @@
-import type { FeatureBannerProps } from "@/components/FeatureBanner";
-import FeatureBanner from "@/components/FeatureBanner";
-import type { ProjectManagementProps } from "@/components/ProjecManagement";
-import ProjecManagement from "@/components/ProjecManagement";
 import Shape from "@/components/Shape";
-import Cta from "@/components/partials/Cta";
+import Cta from "@/components/block/Cta";
+import FeatureBanner, { type FeatureBannerProps } from "@/components/block/features/FeatureBanner";
+import ProjecManagement, {
+  type ProjectManagementProps,
+} from "@/components/block/features/ProjecManagement";
 
 import FeatureImage1 from "@/public/images/features/feature-img-1.png";
 import FeatureImage2 from "@/public/images/features/feature-img-2.png";

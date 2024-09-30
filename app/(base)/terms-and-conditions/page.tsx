@@ -1,5 +1,5 @@
-import PageHeader from "@/components/PageHeader";
 import Shape from "@/components/Shape";
+import PageHeader from "@/components/block/PageHeader";
 
 const termAndConditions = {
   title: "Terms & Condition Of Pinwheel",

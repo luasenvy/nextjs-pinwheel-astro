@@ -1,9 +1,9 @@
-import BlogCategories from "@/components/BlogCategories";
-import Blogs from "@/components/Blogs";
-import PageHeader from "@/components/PageHeader";
 import Shape from "@/components/Shape";
+import PageHeader from "@/components/block/PageHeader";
+import BlogCategories from "@/components/block/blog/BlogCategories";
+import Blogs from "@/components/block/blog/Blogs";
 
-import posts from "@/lib/posts";
+import posts from "@/lib/data/posts";
 
 const categories = posts.reduce(
   (acc, { categories }) => categories.reduce((acc, category) => acc.add(category), acc),

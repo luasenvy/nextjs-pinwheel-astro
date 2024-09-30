@@ -1,8 +1,8 @@
-import Banner, { type BannerProps } from "@/components/Banner";
-import KeyFeatures, { type KeyFeaturesProps } from "@/components/KeyFeatures";
-import Service, { type ServiceProps } from "@/components/Service";
-import Testimonial, { type TestimonialProps } from "@/components/Testimonial";
-import Cta from "@/components/partials/Cta";
+import Cta from "@/components/block/Cta";
+import Banner, { type BannerProps } from "@/components/block/home/Banner";
+import KeyFeatures, { type KeyFeaturesProps } from "@/components/block/home/KeyFeatures";
+import Service, { type ServiceProps } from "@/components/block/home/Service";
+import Testimonial, { type TestimonialProps } from "@/components/block/home/Testimonial";
 
 import BannerImage from "@/public/images/banner-img.png";
 

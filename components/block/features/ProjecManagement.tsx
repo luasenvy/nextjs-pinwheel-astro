@@ -2,10 +2,12 @@
 
 import { parseInline } from "marked";
 
-import FeatureService, { type FeatureServiceProps } from "./FeatureService";
+import FeatureService, {
+  type FeatureServiceProps,
+} from "@/components/block/features/FeatureService";
 
-import FeatureTab, { type FeatureTabProps } from "@/components/FeatureTab";
-import Projects, { type ProjectsProps } from "@/components/Projects";
+import FeatureTab, { type FeatureTabProps } from "@/components/block/features/FeatureTab";
+import Projects, { type ProjectsProps } from "@/components/block/features/Projects";
 
 export interface ProjectManagementProps {
   title: string;

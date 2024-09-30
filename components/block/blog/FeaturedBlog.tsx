@@ -2,8 +2,8 @@ import { slug as slugify } from "github-slugger";
 import Image from "next/image";
 import Link from "next/link";
 
+import type { PostItem } from "@/lib/data/posts";
 import dateFormat from "@/lib/dateFormat";
-import type { PostItem } from "@/lib/posts/posts";
 import readingTime from "@/lib/readingTime";
 
 import { humanize, plainify } from "@/lib/textConverter";

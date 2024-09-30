@@ -1,10 +1,10 @@
-import Faq from "@/components/Faq";
-import PageHeader from "@/components/PageHeader";
-import PricingCard from "@/components/PricingCard";
 import Shape from "@/components/Shape";
-import faqs from "@/lib/faqs";
+import PageHeader from "@/components/block/PageHeader";
+import Faq from "@/components/block/pricing/Faq";
+import PricingCard from "@/components/block/pricing/PricingCard";
+import faqs from "@/lib/data/faqs";
 
-import pricings from "@/lib/pricings";
+import pricings from "@/lib/data/pricings";
 
 const pricing = {
   title: "Pricing",

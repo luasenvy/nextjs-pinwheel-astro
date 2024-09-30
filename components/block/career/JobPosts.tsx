@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import { AiOutlineArrowRight } from "react-icons/ai";
 
-import type { CareerItem } from "@/lib/careers";
+import type { CareerItem } from "@/lib/data/careers";
 import { humanize } from "@/lib/textConverter";
 
 interface JobPostsProps {

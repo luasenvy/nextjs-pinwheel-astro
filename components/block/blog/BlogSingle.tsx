@@ -5,10 +5,10 @@ import Link from "next/link";
 
 import { FaRegCalendarAlt, FaRegClock, FaRegFolder, FaRegUserCircle } from "react-icons/fa";
 
-import Disqus from "@/components/Disqus";
+import Disqus from "@/components/block/Disqus";
 
+import type { PostItem } from "@/lib/data/posts";
 import dateFormat from "@/lib/dateFormat";
-import type { PostItem } from "@/lib/posts";
 import readingTime from "@/lib/readingTime";
 import { humanize } from "@/lib/textConverter";
 

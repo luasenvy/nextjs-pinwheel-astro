@@ -1,8 +1,8 @@
 import { Merriweather, Poppins } from "next/font/google";
 
 import TwSizeIndicator from "@/components/TwSizeIndicator";
-import Footer from "@/components/partials/Footer";
-import Header from "@/components/partials/Header";
+import Footer from "@/components/block/Footer";
+import Header from "@/components/block/Header";
 
 const poppins = Poppins({
   subsets: ["latin"],

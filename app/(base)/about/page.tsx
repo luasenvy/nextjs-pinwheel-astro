@@ -1,14 +1,10 @@
-import type { CounterComponentProps } from "@/components/CounterComponent";
-import CounterComponent from "@/components/CounterComponent";
-import type { GalleryProps } from "@/components/Gallery";
-import Gallery from "@/components/Gallery";
-import type { OurMembersProps } from "@/components/OurMembers";
-import OurMembers from "@/components/OurMembers";
-import type { PageHeaderProps } from "@/components/PageHeader";
-import PageHeader from "@/components/PageHeader";
 import Shape from "@/components/Shape";
-import type { WorksProps } from "@/components/Works";
-import Works from "@/components/Works";
+
+import PageHeader, { type PageHeaderProps } from "@/components/block/PageHeader";
+import Counter, { type CounterProps } from "@/components/block/about/Counter";
+import Gallery, { type GalleryProps } from "@/components/block/about/Gallery";
+import OurMembers, { type OurMembersProps } from "@/components/block/about/OurMembers";
+import Works, { type WorksProps } from "@/components/block/about/Works";
 
 import gallery1Image from "@/public/images/about/gallery-img-1.png";
 import gallery2Image from "@/public/images/about/gallery-img-2.png";
@@ -44,7 +40,7 @@ const gallery: GalleryProps = {
   images: [gallery1Image, gallery3Image, gallery2Image],
 };
 
-const counter: CounterComponentProps = {
+const counter: CounterProps = {
   counter: [
     { name: "Customers", number: 25, messurment: "M", color: "#A3A1FB" },
     { name: "Customers", number: 440, messurment: "M", color: "#5EE2A0" },
@@ -121,7 +117,7 @@ export default function About() {
           <div className="page-hero-content mx-auto max-w-[768px] text-center">
             <PageHeader {...about} />
           </div>
-          <CounterComponent {...counter} />
+          <Counter {...counter} />
           <Gallery {...gallery} />
           <Works {...works} />
           <OurMembers {...ourMembers} />
