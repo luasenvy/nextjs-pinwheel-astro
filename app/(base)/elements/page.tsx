@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
+
 import Accordion from "@/components/Accordion";
 import Button from "@/components/Button";
 import Notice from "@/components/Notice";
@@ -127,38 +130,36 @@ export default function TermsAndConditions() {
             </ul>
             <hr />
             <h3>Code and Syntax Highlighting</h3>
-            <Notice type="warning">
-              Cannot Use Prismjs. <code>.tag</code> className is Conflict.
-            </Notice>
 
             <h4>HTML</h4>
-            <pre>
-              <code>{`<ul>
+            <SyntaxHighlighter showLineNumbers wrapLines language="html" style={darcula}>
+              {`<ul>
   <li class="nav-item">
     <a class="nav-link" href="/">Home</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="about/">About</a>
   </li>
-</ul>`}</code>
-            </pre>
+</ul>`}
+            </SyntaxHighlighter>
+
             <hr />
             <h4>CSS</h4>
-            <pre>
-              <code>{`img {
+            <SyntaxHighlighter showLineNumbers wrapLines language="css" style={darcula}>
+              {`img {
   vertical-align: middle;
   border: 0;
   max-width: 100%;
   height: auto;
-}`}</code>
-            </pre>
+}`}
+            </SyntaxHighlighter>
             <hr />
             <h4>JavaScript</h4>
-            <pre>
-              <code>{`window.addEventListener("load", (e) => {
+            <SyntaxHighlighter showLineNumbers wrapLines language="javascript" style={darcula}>
+              {`window.addEventListener("load", (e) => {
   document.querySelector(".preloader").style.display = "none";
-});`}</code>
-            </pre>
+});`}
+            </SyntaxHighlighter>
             <hr />
             <h3>Button</h3>
             <Button href="#" style="solid">
