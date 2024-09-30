@@ -23,6 +23,7 @@ const main = [
       { name: "Integrations", url: "/integrations" },
       { name: "Pricing", url: "/pricing" },
       { name: "Sign In", url: "/signin" },
+      { name: "Sign Up", url: "/signup" },
       { name: "Elements", url: "/elements" },
       { name: "Changelog", url: "/changelog" },
       { name: "Terms And Conditions", url: "/terms-and-conditions" },
