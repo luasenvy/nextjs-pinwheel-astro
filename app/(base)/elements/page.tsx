@@ -1,10 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import prismjs from "prismjs";
-
-import "prismjs/themes/prism-twilight.css";
-
 import Accordion from "@/components/Accordion";
 import Button from "@/components/Button";
 import Notice from "@/components/Notice";
@@ -22,21 +18,6 @@ const termAndConditions = {
 };
 
 export default function TermsAndConditions() {
-  console.info(
-    prismjs.highlight(
-      `<ul>
-<li class="nav-item">
-<a class="nav-link" href="/">Home</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="about/">About</a>
-</li>
-</ul>`,
-      prismjs.languages.html,
-      "html"
-    ),
-    "@@@"
-  );
   return (
     <>
       <Shape />
@@ -145,24 +126,20 @@ export default function TermsAndConditions() {
             </ul>
             <hr />
             <h3>Code and Syntax Highlighting</h3>
+            <Notice type="warning">
+              Cannot Use Prismjs. <code>.tag</code> className is Conflict.
+            </Notice>
+
             <h4>HTML</h4>
             <pre>
-              <code
-                dangerouslySetInnerHTML={{
-                  __html: prismjs.highlight(
-                    `<ul>
+              <code>{`<ul>
   <li class="nav-item">
     <a class="nav-link" href="/">Home</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="about/">About</a>
   </li>
-</ul>`,
-                    prismjs.languages.html,
-                    "html"
-                  ),
-                }}
-              ></code>
+</ul>`}</code>
             </pre>
             <hr />
             <h4>CSS</h4>
