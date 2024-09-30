@@ -21,7 +21,7 @@ const about: PageHeaderProps = {
   buttons: [
     {
       label: "Download The Theme",
-      link: "https://themefisher.com/astro-themes/pinwheel-astro",
+      link: "https://themefisher.com/products/pinwheel-astro",
       enable: true,
     },
     {
@@ -70,7 +70,7 @@ const works: WorksProps = {
     title: "The six core work\ndrive everything do",
     button: {
       label: "Download The Theme",
-      link: "https://themefisher.com/astro-themes/pinwheel-astro",
+      link: "https://themefisher.com/products/pinwheel-astro",
       enable: true,
     },
     features_list: [

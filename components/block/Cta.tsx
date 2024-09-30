@@ -4,7 +4,7 @@ const title = "Helping teams in the world with focus";
 const description =
   "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.";
 const label = "Download The Theme";
-const link = "https://themefisher.com/astro-themes/pinwheel-astro";
+const link = "https://themefisher.com/products/pinwheel-astro";
 
 export default function Cta() {
   return (

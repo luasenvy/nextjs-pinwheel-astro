@@ -24,7 +24,7 @@ const banner: BannerProps = {
   image: BannerImage,
   button: {
     label: "Download The Theme",
-    link: "https://themefisher.com/astro-themes/pinwheel-astro",
+    link: "https://themefisher.com/products/pinwheel-astro",
     enable: true,
   },
 };

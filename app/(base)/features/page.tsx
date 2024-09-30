@@ -18,7 +18,7 @@ const featureBanner: FeatureBannerProps = {
     image: FeaturesBannerImage,
     button: {
       label: "Download The Theme",
-      link: "https://themefisher.com/astro-themes/pinwheel-astro",
+      link: "https://themefisher.com/products/pinwheel-astro",
       enable: true,
     },
   },
@@ -76,7 +76,7 @@ const features: ProjectManagementProps = {
     buttons: [
       {
         label: "Download The Theme",
-        link: "https://themefisher.com/astro-themes/pinwheel-astro",
+        link: "https://themefisher.com/products/pinwheel-astro",
         enable: true,
       },
       { label: "Learn More", link: "#", outline: true, enable: true },
