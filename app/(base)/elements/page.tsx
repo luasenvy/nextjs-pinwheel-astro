@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import prismjs from "prismjs";
+
+import "prismjs/themes/prism-twilight.css";
+
 import Accordion from "@/components/Accordion";
 import Button from "@/components/Button";
 import Notice from "@/components/Notice";
@@ -18,6 +22,21 @@ const termAndConditions = {
 };
 
 export default function TermsAndConditions() {
+  console.info(
+    prismjs.highlight(
+      `<ul>
+<li class="nav-item">
+<a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about/">About</a>
+</li>
+</ul>`,
+      prismjs.languages.html,
+      "html"
+    ),
+    "@@@"
+  );
   return (
     <>
       <Shape />
@@ -82,16 +101,30 @@ export default function TermsAndConditions() {
             </ol>
             <hr />
             <h3>Link</h3>
-            <Link href="https://www.google.com">I'm an inline-style link</Link>
-            <Link href="https://www.google.com" title="Google's Homepage">
-              I'm an inline-style link with title
-            </Link>
-            <Link href="#arbitrary">I'm a reference-style link</Link>
-            <Link href="../blob/master/LICENSE">I'm a relative reference to a repository file</Link>
-            <Link href="1">You can use numbers for reference-style link definitions</Link>
-            Or leave it empty and use the <Link href=".">link text itself</Link>. example.com (but
-            not on Github, for example). Some text to show that the reference links can follow
-            later.
+            <p>
+              <Link href="https://www.google.com">I'm an inline-style link</Link>
+            </p>
+            <p>
+              <Link href="https://www.google.com" title="Google's Homepage">
+                I'm an inline-style link with title
+              </Link>
+            </p>
+            <p>
+              <Link href="#arbitrary">I'm a reference-style link</Link>
+            </p>
+            <p>
+              <Link href="../blob/master/LICENSE">
+                I'm a relative reference to a repository file
+              </Link>
+            </p>
+            <p>
+              <Link href="1">You can use numbers for reference-style link definitions</Link>
+            </p>
+            <p>
+              Or leave it empty and use the <Link href=".">link text itself</Link>. example.com (but
+              not on Github, for example). Some text to show that the reference links can follow
+              later.
+            </p>
             <hr />
             <h3>Ordered List</h3>
             <ol>
@@ -114,14 +147,22 @@ export default function TermsAndConditions() {
             <h3>Code and Syntax Highlighting</h3>
             <h4>HTML</h4>
             <pre>
-              <code>{`<ul>
+              <code
+                dangerouslySetInnerHTML={{
+                  __html: prismjs.highlight(
+                    `<ul>
   <li class="nav-item">
     <a class="nav-link" href="/">Home</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="about/">About</a>
   </li>
-</ul>`}</code>
+</ul>`,
+                    prismjs.languages.html,
+                    "html"
+                  ),
+                }}
+              ></code>
             </pre>
             <hr />
             <h4>CSS</h4>

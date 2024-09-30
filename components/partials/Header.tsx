@@ -1,6 +1,6 @@
 "use client";
 
-import classNames from "classnames";
+import classnames from "classnames";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -9,68 +9,26 @@ import { useEffect, useRef, useState } from "react";
 import Logo from "@/components/Logo";
 
 const main = [
-  {
-    name: "Home",
-    url: "/",
-  },
-  {
-    name: "About",
-    url: "/about",
-  },
-  {
-    name: "Blog",
-    url: "/blog",
-  },
-  {
-    name: "Features",
-    url: "/features",
-  },
-  {
-    name: "How It Works",
-    url: "/how-it-works",
-  },
+  { name: "Home", url: "/" },
+  { name: "About", url: "/about" },
+  { name: "Blog", url: "/blog" },
+  { name: "Features", url: "/features" },
+  { name: "How It Works", url: "/how-it-works" },
   {
     name: "Pages",
     url: "",
     hasChildren: true,
     children: [
-      {
-        name: "Career",
-        url: "/career",
-      },
-
-      {
-        name: "Integrations",
-        url: "/integrations",
-      },
-
-      {
-        name: "Pricing",
-        url: "/pricing",
-      },
-      {
-        name: "Sign In",
-        url: "/signin",
-      },
-
-      {
-        name: "Elements",
-        url: "/elements",
-      },
-      {
-        name: "Changelog",
-        url: "/changelog",
-      },
-      {
-        name: "Terms And Conditions",
-        url: "/terms-and-conditions",
-      },
+      { name: "Career", url: "/career" },
+      { name: "Integrations", url: "/integrations" },
+      { name: "Pricing", url: "/pricing" },
+      { name: "Sign In", url: "/signin" },
+      { name: "Elements", url: "/elements" },
+      { name: "Changelog", url: "/changelog" },
+      { name: "Terms And Conditions", url: "/terms-and-conditions" },
     ],
   },
-  {
-    name: "Contact",
-    url: "/contact",
-  },
+  { name: "Contact", url: "/contact" },
 ];
 
 export interface ChildNavigationLink {
@@ -88,6 +46,7 @@ export interface NavigationLink {
 export default function Header() {
   const pathname = usePathname();
   const headerRef = useRef<HTMLHeadElement>(null);
+  const [showMobile, setShowMobile] = useState<boolean>(false);
 
   const [dropdownHidden, setDropdownHidden] = useState<boolean>(true);
 
@@ -113,7 +72,13 @@ export default function Header() {
         <div className="order-0">
           <Logo />
         </div>
-        <input id="nav-toggle" type="checkbox" className="hidden" />
+        <input
+          id="nav-toggle"
+          type="checkbox"
+          className="hidden"
+          checked={showMobile}
+          onChange={(e) => setShowMobile(e.currentTarget.checked)}
+        />
         <label
           id="show-button"
           htmlFor="nav-toggle"
@@ -146,16 +111,15 @@ export default function Header() {
             menu.hasChildren ? (
               <li
                 key={`nav-item-${i}`}
-                className="nav-item nav-dropdown group relative cursor-pointer  dropdown-button"
+                className="nav-item nav-dropdown group relative cursor-pointer dropdown-button"
                 onClick={() => setDropdownHidden((prev) => !prev)}
               >
                 <span
-                  className={`nav-link inline-flex items-center ${
-                    menu.children?.map(({ url }) => url).includes(pathname) ||
-                    menu.children?.map(({ url }) => `${url}/`).includes(pathname)
-                      ? "active"
-                      : ""
-                  }`}
+                  className={classnames("nav-link inline-flex items-center", {
+                    active:
+                      menu.children?.map(({ url }) => url).includes(pathname) ||
+                      menu.children?.map(({ url }) => `${url}/`).includes(pathname),
+                  })}
                 >
                   {menu.name}
                   <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
@@ -164,8 +128,8 @@ export default function Header() {
                 </span>
                 <ul
                   id="dropdown"
-                  className={classNames(
-                    "nav-dropdown-list mx-auto hidden duration-300 lg:invisible lg:absolute lg:block lg:h-auto lg:w-[13.5rem] lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100",
+                  className={classnames(
+                    "nav-dropdown-list mx-auto duration-300 lg:invisible lg:absolute lg:block lg:h-auto lg:w-[13.5rem] lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100",
                     { hidden: !dropdownHidden }
                   )}
                 >
@@ -173,9 +137,10 @@ export default function Header() {
                     <li key={`nav-item-child-${i}`} className="nav-dropdown-item">
                       <Link
                         href={child.url}
-                        className={`nav-dropdown-link block ${
-                          (pathname === `${child.url}/` || pathname === child.url) && "text-primary"
-                        }`}
+                        className={classnames("nav-dropdown-link block", {
+                          "text-primary": pathname === `${child.url}/` || pathname === child.url,
+                        })}
+                        onClick={(e) => setShowMobile(false)}
                       >
                         {child.name}
                       </Link>
@@ -187,9 +152,10 @@ export default function Header() {
               <li key={`nav-item-other-${i}`} className="nav-item">
                 <Link
                   href={menu.url}
-                  className={`nav-link inline-block lg:block ${
-                    (pathname === `${menu.url}/` || pathname === menu.url) && "active"
-                  }`}
+                  className={classnames("nav-link inline-block lg:block", {
+                    active: pathname === `${menu.url}/` || pathname === menu.url,
+                  })}
+                  onClick={(e) => setShowMobile(false)}
                 >
                   {menu.name}
                 </Link>
