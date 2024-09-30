@@ -2,15 +2,10 @@ import Image from "next/image";
 
 import PageHeader from "@/components/block/PageHeader";
 
+import { contact, contact_form_action } from "@/lib/data/contact";
 import ContactImage from "@/public/images/contact-img.png";
 import Shape2Image from "@/public/images/shape-2.png";
 
-const contact = {
-  title: "Contact",
-  page_title: "Get’n touch with Our\nPinwheel team",
-};
-
-const contact_form_action = "#";
 export default function Contact() {
   return (
     <>

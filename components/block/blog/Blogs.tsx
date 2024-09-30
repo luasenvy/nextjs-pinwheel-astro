@@ -16,13 +16,17 @@ export default function Blogs({ posts }: BlogsProps) {
   return (
     <div className="row">
       {posts.map(({ image, categories, slug, title, content, date }, i) => (
-        <div key={i} className="mb-8 md:col-6 lg:col-4">
+        <div key={`blog-card-${i}`} className="mb-8 md:col-6 lg:col-4">
           <div className="card">
             <Image className="card-img" width={335} height={210} src={image} alt="" />
             <div className="card-content">
               <div className="card-tags space-x-1">
-                {categories.map((category) => (
-                  <Link key={category} className="tag" href={`/categories/${slugify(category)}`}>
+                {categories.map((category, i) => (
+                  <Link
+                    key={`cat-link-${i}`}
+                    className="tag"
+                    href={`/categories/${slugify(category)}`}
+                  >
                     {humanize(category)}
                   </Link>
                 ))}

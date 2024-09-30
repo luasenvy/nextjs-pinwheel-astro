@@ -3,17 +3,8 @@ import Cta from "@/components/block/Cta";
 import PageHeader from "@/components/block/PageHeader";
 import IntegrateMedia from "@/components/block/intergrations/IntegrateMedia";
 
-import integrations from "@/lib/data/integrations";
-
-const integration = {
-  title: "Integrations",
-  page_title: "How To Integrate\nWith Pinwheel",
-};
-
-const categories = integrations.reduce(
-  (acc, { categories }) => categories.reduce((acc, category) => acc.add(category), acc),
-  new Set<string>()
-);
+import { integration } from "@/lib/data/integration";
+import { categories, integrations } from "@/lib/data/integrations";
 
 export default function IntegrationsPage() {
   return (
@@ -24,7 +15,7 @@ export default function IntegrationsPage() {
           <PageHeader {...integration} />
         </div>
       </section>
-      <IntegrateMedia integrations={integrations} categories={Array.from(categories)} />
+      <IntegrateMedia integrations={integrations} categories={categories} />
       <Cta />
     </>
   );

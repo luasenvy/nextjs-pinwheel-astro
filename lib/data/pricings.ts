@@ -23,7 +23,7 @@ export interface PricingItem {
   slug: string;
 }
 
-export default [
+export const pricings = [
   {
     title: "Basic",
     pre_currency: "$",

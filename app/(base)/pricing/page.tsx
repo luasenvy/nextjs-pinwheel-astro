@@ -4,12 +4,8 @@ import Faq from "@/components/block/pricing/Faq";
 import PricingCard from "@/components/block/pricing/PricingCard";
 import faqs from "@/lib/data/faqs";
 
-import pricings from "@/lib/data/pricings";
-
-const pricing = {
-  title: "Pricing",
-  page_title: "Pinwheel Pricing",
-};
+import { pricing } from "@/lib/data/pricing";
+import { pricings } from "@/lib/data/pricings";
 
 export default function PricingPage() {
   return (

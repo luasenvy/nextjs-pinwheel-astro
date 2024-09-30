@@ -28,8 +28,8 @@ export default function BlogCategories({ categories }: BlogCategoriesProps) {
             All Categories
           </Link>
         </li>
-        {categories.map((cat) => (
-          <li key={cat}>
+        {categories.map((cat, i) => (
+          <li key={`cat-${i}`}>
             <Link
               className={classnames("filter-btn btn btn-sm", {
                 "filter-btn-active": category === slugify(cat),

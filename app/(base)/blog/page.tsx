@@ -6,28 +6,12 @@ import BlogCategories from "@/components/block/blog/BlogCategories";
 import Blogs from "@/components/block/blog/Blogs";
 import FeaturedBlog from "@/components/block/blog/FeaturedBlog";
 
-import posts from "@/lib/data/posts";
-
-const blog_folder = "blog";
-const pagination = 6;
-const blog = {
-  title: "Blog",
-  page_title: "Insight and advice from\nour expert team.",
-};
-
-const categories = posts.reduce(
-  (acc, { categories }) => categories.reduce((acc, category) => acc.add(category), acc),
-  new Set<string>()
-);
+import { blog, blog_folder, pagination } from "@/lib/data/blog";
+import { categories, featureds, posts } from "@/lib/data/posts";
 
 export default function BlogPage() {
-  const sortedPosts = posts.toSorted(
-    ({ date: a }, { date: b }) => new Date(b).getTime() - new Date(a).getTime()
-  );
-
-  const currentPosts = sortedPosts.slice(0, pagination);
+  const currentPosts = posts.slice(0, pagination);
   const totalPages = Math.ceil(posts.length / pagination);
-  const featuredPosts = sortedPosts.filter(({ featured }) => featured);
 
   return (
     <>
@@ -39,8 +23,8 @@ export default function BlogPage() {
       </section>
       <section className="section">
         <div className="container">
-          <FeaturedBlog posts={featuredPosts} />
-          <BlogCategories categories={Array.from(categories)} />
+          <FeaturedBlog posts={featureds} />
+          <BlogCategories categories={categories} />
           <h2 className="h4 mb-4">Recent Posts</h2>
           <Blogs posts={currentPosts} />
           <Pagination section={blog_folder} currentPage={1} totalPages={totalPages} />

@@ -1,9 +1,7 @@
 import Shape from "@/components/Shape";
 import PageHeader from "@/components/block/PageHeader";
 
-const termAndConditions = {
-  title: "Terms & Condition Of Pinwheel",
-};
+import { termAndConditions } from "@/lib/data/terms-and-conditions";
 
 export default function TermsAndConditions() {
   return (

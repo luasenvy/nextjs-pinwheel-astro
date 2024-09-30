@@ -24,8 +24,12 @@ export default function FeaturedBlog({ posts }: FeaturedBlogProps) {
               <Image className="card-img" width={235} height={304} src={image} alt={title} />
               <div className="card-content">
                 <div className="card-tags space-x-1">
-                  {categories.map((category) => (
-                    <Link className="tag" href={`/categories/${slugify(category)}`}>
+                  {categories.map((category, i) => (
+                    <Link
+                      key={`link-${i}`}
+                      className="tag"
+                      href={`/categories/${slugify(category)}`}
+                    >
                       {humanize(category)}
                     </Link>
                   ))}

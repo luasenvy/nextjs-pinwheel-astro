@@ -5,9 +5,7 @@ import Shape from "@/components/Shape";
 import PageHeader from "@/components/block/PageHeader";
 import ChangelogCard from "@/components/block/changelog/ChangelogCard";
 
-const changelog = {
-  title: "Changelog",
-};
+import { changelog } from "@/lib/data/changelog";
 
 export default function ChangelogPage() {
   return (

@@ -1,5 +1,5 @@
 import BlogSingle from "@/components/block/blog/BlogSingle";
-import posts from "@/lib/data/posts";
+import { posts } from "@/lib/data/posts";
 import type { PostItem } from "@/lib/data/posts";
 
 export interface BlogViewProps {

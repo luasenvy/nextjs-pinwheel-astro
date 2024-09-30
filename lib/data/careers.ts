@@ -1,4 +1,7 @@
 import type { StaticImageData } from "next/image";
+import type * as Icon from "react-feather";
+
+import type { CareerBenefitsProps } from "@/components/block/career/CareerBenefits";
 
 const excerpt =
   "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam lorem amet eget in netus laoreet";
@@ -52,7 +55,7 @@ export interface CareerItem {
   color: string;
 }
 
-export default [
+export const careers = [
   {
     title: "Design Lead",
     excerpt,
@@ -130,3 +133,60 @@ export default [
     content,
   },
 ].map((post, i) => ({ ...post, slug: `${i}` })) as Array<CareerItem>;
+
+export const categories = Array.from(
+  careers.reduce(
+    (acc, { categories }) => categories.reduce((acc, category) => acc.add(category), acc),
+    new Set<string>()
+  )
+);
+
+export const benefits: CareerBenefitsProps = {
+  title: "Competitive salary",
+  description:
+    "Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor amet, consectetur adipiscing elit. Praesent sapien massa, convallis a pellentesque",
+  benifit_list: [
+    {
+      title: "Competitive salary",
+      content:
+        "Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel",
+      color: "#24A1FF",
+      icon: "briefcase" as keyof typeof Icon,
+    },
+    {
+      title: "100% remote",
+      content:
+        "Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel",
+      color: "#7B5AFF",
+      icon: "aperture" as keyof typeof Icon,
+    },
+    {
+      title: "Unlimited PTO",
+      content:
+        "Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel",
+      color: "#FDC528",
+      icon: "umbrella" as keyof typeof Icon,
+    },
+    {
+      title: "Flexible HOURS",
+      content:
+        "Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel",
+      color: "#FF5874",
+      icon: "clock" as keyof typeof Icon,
+    },
+    {
+      title: "Medical insurance",
+      content:
+        "Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel",
+      color: "#12E189",
+      icon: "plusSquare" as keyof typeof Icon,
+    },
+    {
+      title: "Career growth",
+      content:
+        "Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel",
+      color: "#E545FF",
+      icon: "barChart" as keyof typeof Icon,
+    },
+  ],
+};

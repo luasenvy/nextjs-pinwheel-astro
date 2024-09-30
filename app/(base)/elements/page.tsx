@@ -14,12 +14,9 @@ import Youtube from "@/components/block/Youtube";
 import Tab from "@/components/block/elements/Tab";
 import Tabs from "@/components/block/elements/Tabs";
 
+import { termAndConditions } from "@/lib/data/terms-and-conditions";
 import FlowerImage from "@/public/images/flower.jpg";
 import IntroThumbnailImage from "@/public/images/intro-thumbnail.png";
-
-const termAndConditions = {
-  title: "Terms & Condition Of Pinwheel",
-};
 
 export default function TermsAndConditions() {
   return (

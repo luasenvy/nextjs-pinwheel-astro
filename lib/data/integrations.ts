@@ -33,7 +33,7 @@ Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
 - Perform any other function that we believe in good is necessary
   to protect the or proper functioning of our Site or Service.`;
 
-export default [
+export const integrations = [
   {
     name: "facebook",
     title: "Facebook Integrations",
@@ -119,3 +119,10 @@ export default [
     content,
   },
 ].map((post, i) => ({ ...post, slug: `${i}` })) as Array<IntegrationItem>;
+
+export const categories = Array.from(
+  integrations.reduce(
+    (acc, { categories }) => categories.reduce((acc, category) => acc.add(category), acc),
+    new Set<string>()
+  )
+);

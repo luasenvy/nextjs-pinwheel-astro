@@ -42,7 +42,7 @@ export interface PostItem {
   content: string;
 }
 
-export default [
+export const posts = [
   {
     title: "How Video Analytics Can Help Understand and Increase",
     subtitle,
@@ -175,4 +175,17 @@ export default [
     draft: false,
     content,
   },
-].map((post, i) => ({ ...post, slug: `${i}` })) as Array<PostItem>;
+]
+  .map((post, i) => ({ ...post, slug: `${i}` }))
+  .toSorted(
+    ({ date: a }, { date: b }) => new Date(b).getTime() - new Date(a).getTime()
+  ) as Array<PostItem>;
+
+export const categories = Array.from(
+  posts.reduce(
+    (acc, { categories }) => categories.reduce((acc, category) => acc.add(category), acc),
+    new Set<string>()
+  )
+);
+
+export const featureds = posts.filter(({ featured }) => featured);

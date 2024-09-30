@@ -1,82 +1,16 @@
 import Image from "next/image";
-import type * as Icon from "react-feather";
 
 import Shape from "@/components/Shape";
+
 import Cta from "@/components/block/Cta";
 import PageHeader from "@/components/block/PageHeader";
-import CareerBenefits, { type CareerBenefitsProps } from "@/components/block/career/CareerBenefits";
+import CareerBenefits from "@/components/block/career/CareerBenefits";
 import JobPosts from "@/components/block/career/JobPosts";
 
-import careers from "@/lib/data/careers";
+import { career, content as careerContent } from "@/lib/data/career";
+import { benefits, careers, categories } from "@/lib/data/careers";
 import CarrerHeroImage from "@/public/images/career/career-hero-image.png";
-
-const categories = careers.reduce(
-  (acc, { categories }) => categories.reduce((acc, category) => acc.add(category), acc),
-  new Set<string>()
-);
-
-const career = {
-  title: "Career",
-  page_title: "Career In Pinwheel",
-  content:
-    "Donec sollicitudin molestie malesda. Donec sollitudin molestie malesuada Mauris\npellentesque nec egestas non nisi Cras",
-};
-
-const careerContent = {
-  title: "Open positions",
-  subtitle:
-    "Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor amet, consectetur\nadipiscing elit. Praesent sapien massa, convallis",
-};
-
-const benefits: CareerBenefitsProps = {
-  title: "Competitive salary",
-  description:
-    "Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor amet, consectetur adipiscing elit. Praesent sapien massa, convallis a pellentesque",
-  benifit_list: [
-    {
-      title: "Competitive salary",
-      content:
-        "Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel",
-      color: "#24A1FF",
-      icon: "briefcase" as keyof typeof Icon,
-    },
-    {
-      title: "100% remote",
-      content:
-        "Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel",
-      color: "#7B5AFF",
-      icon: "aperture" as keyof typeof Icon,
-    },
-    {
-      title: "Unlimited PTO",
-      content:
-        "Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel",
-      color: "#FDC528",
-      icon: "umbrella" as keyof typeof Icon,
-    },
-    {
-      title: "Flexible HOURS",
-      content:
-        "Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel",
-      color: "#FF5874",
-      icon: "clock" as keyof typeof Icon,
-    },
-    {
-      title: "Medical insurance",
-      content:
-        "Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel",
-      color: "#12E189",
-      icon: "plusSquare" as keyof typeof Icon,
-    },
-    {
-      title: "Career growth",
-      content:
-        "Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel",
-      color: "#E545FF",
-      icon: "barChart" as keyof typeof Icon,
-    },
-  ],
-};
+import ShapeImage from "@/public/images/shape.png";
 
 export default function CareerPage() {
   return (
@@ -97,14 +31,14 @@ export default function CareerPage() {
               />
               <Image
                 className="lg:h-[150px] lg:w-[150px] absolute -left-[8%] bottom-[12%] z-[-1] h-20 w-20 -rotate-90 lg:-left-8 lg:bottom-4"
-                src="/images/shape.png"
+                src={ShapeImage}
                 height={130}
                 width={130}
                 alt=""
               />
               <Image
                 className="absolute -bottom-4 -right-4 z-[-1] h-16 w-16 -rotate-90"
-                src="/images/shape.png"
+                src={ShapeImage}
                 alt=""
                 height={64}
                 width={64}
@@ -114,7 +48,7 @@ export default function CareerPage() {
         </div>
       </section>
       <CareerBenefits {...benefits} />
-      <JobPosts categories={Array.from(categories)} career={careerContent} posts={careers} />
+      <JobPosts categories={categories} career={careerContent} posts={careers} />
       <Cta />
     </>
   );

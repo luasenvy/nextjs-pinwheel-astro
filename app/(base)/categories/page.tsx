@@ -3,12 +3,8 @@ import PageHeader from "@/components/block/PageHeader";
 import BlogCategories from "@/components/block/blog/BlogCategories";
 import Blogs from "@/components/block/blog/Blogs";
 
-import posts from "@/lib/data/posts";
-
-const categories = posts.reduce(
-  (acc, { categories }) => categories.reduce((acc, category) => acc.add(category), acc),
-  new Set<string>()
-);
+import { categories } from "@/lib/data/categories";
+import { categories as postCategories, posts } from "@/lib/data/posts";
 
 export default function CategoriesPage() {
   return (
@@ -16,12 +12,12 @@ export default function CategoriesPage() {
       <Shape />
       <section className="page-hero pb-14 pt-16">
         <div className="container">
-          <PageHeader title="Categories" />
+          <PageHeader {...categories} />
         </div>
       </section>
       <section className="section">
         <div className="container">
-          <BlogCategories categories={Array.from(categories)} />
+          <BlogCategories categories={postCategories} />
           <Blogs posts={posts} />
         </div>
       </section>

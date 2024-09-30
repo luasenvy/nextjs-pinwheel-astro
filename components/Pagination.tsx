@@ -65,6 +65,7 @@ export default function Pagination({ section, currentPage, totalPages }: Paginat
         {pageList.map((pagination, i) =>
           pagination === currentPage ? (
             <span
+              key={`pgn-${i}`}
               aria-current="page"
               className="mx-1 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white md:h-12  md:w-12"
             >
@@ -72,6 +73,7 @@ export default function Pagination({ section, currentPage, totalPages }: Paginat
             </span>
           ) : (
             <Link
+              key={`pgn-${i}`}
               href={
                 i === 0
                   ? `${section ? "/" + section : "/"}`
