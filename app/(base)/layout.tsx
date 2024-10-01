@@ -27,7 +27,7 @@ export default function BaseLayout({ children }: React.PropsWithChildren) {
     >
       <TwSizeIndicator />
       <Header />
-      <main id="main-content">{children}</main>;
+      <main id="main-content">{children}</main>
       <Footer />
     </body>
   );
