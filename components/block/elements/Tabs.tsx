@@ -18,7 +18,7 @@ export default function Tabs({ children }: React.PropsWithChildren) {
               className={classnames("tab-nav-item", { active: i === active })}
               onClick={() => handleClickTab(i)}
             >
-              {props.label}
+              {props.name}
             </li>
           );
         })}

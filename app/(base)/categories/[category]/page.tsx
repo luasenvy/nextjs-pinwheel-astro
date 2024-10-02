@@ -9,12 +9,14 @@ import PageHeader from "@/components/block/PageHeader";
 import BlogCategories from "@/components/block/blog/BlogCategories";
 import Blogs from "@/components/block/blog/Blogs";
 
+import { type PostItem, categories as postCategories, posts } from "@/lib/data/blog";
 import { categories } from "@/lib/data/categories";
-import { type PostItem, categories as postCategories, posts } from "@/lib/data/posts";
 import { humanize } from "@/lib/textConverter";
 
 const taxonomyFilter = (posts: Array<PostItem>, key: string) =>
-  posts.filter(({ categories }) => categories.map((name: string) => slugify(name)).includes(key));
+  posts.filter(({ metadata: { categories } }) =>
+    categories.map((name: string) => slugify(name)).includes(key)
+  );
 
 interface CategoryPageProps {
   item: string;

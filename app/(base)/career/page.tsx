@@ -7,8 +7,7 @@ import PageHeader from "@/components/block/PageHeader";
 import CareerBenefits from "@/components/block/career/CareerBenefits";
 import JobPosts from "@/components/block/career/JobPosts";
 
-import { career, content as careerContent } from "@/lib/data/career";
-import { benefits, careers, categories } from "@/lib/data/careers";
+import { benefits, career, content as careerContent, careers, categories } from "@/lib/data/career";
 import CarrerHeroImage from "@/public/images/career/career-hero-image.png";
 import ShapeImage from "@/public/images/shape.png";
 

@@ -2,10 +2,12 @@ import { slug as slugify } from "github-slugger";
 import Image from "next/image";
 import Link from "next/link";
 
-import type { PostItem } from "@/lib/data/posts";
+import type { PostItem } from "@/lib/data/blog";
+
 import dateFormat from "@/lib/dateFormat";
 import readingTime from "@/lib/readingTime";
 import { humanize, plainify } from "@/lib/textConverter";
+
 const summary_length = 100;
 
 interface BlogsProps {
@@ -15,7 +17,7 @@ interface BlogsProps {
 export default function Blogs({ posts }: BlogsProps) {
   return (
     <div className="row">
-      {posts.map(({ image, categories, slug, title, content, date }, i) => (
+      {posts.map(({ metadata: { image, categories, slug, title, content, date } }, i) => (
         <div key={`blog-card-${i}`} className="mb-8 md:col-6 lg:col-4">
           <div className="card">
             <Image className="card-img" width={335} height={210} src={image} alt="" />

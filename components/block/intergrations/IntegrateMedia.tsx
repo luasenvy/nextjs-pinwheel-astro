@@ -8,7 +8,7 @@ import React, { useState } from "react";
 
 import { AiOutlineArrowRight } from "react-icons/ai";
 
-import type { IntegrationItem } from "@/lib/data/integrations";
+import type { IntegrationItem } from "@/lib/data/integration";
 import { humanize } from "@/lib/textConverter";
 
 export interface IntegrateMediaProps {
@@ -20,7 +20,7 @@ export default function IntegrateMedia({ integrations, categories }: IntegrateMe
   const [active, setActive] = useState("");
   const filterPost = !active
     ? integrations
-    : integrations.filter((post) => post.categories.includes(active));
+    : integrations.filter((post) => post.metadata.categories.includes(active));
   return (
     <section className="section pt-0">
       <div className="container">
@@ -52,13 +52,13 @@ export default function IntegrateMedia({ integrations, categories }: IntegrateMe
           </div>
         </div>
         <div className="integration-tab-items row mt-10">
-          {filterPost.map(({ image, name, slug, categories, excerpt }, i) => (
+          {filterPost.map(({ metadata: { image, name, slug, categories, excerpt } }, i) => (
             <div key={i} className="integration-tab-item mb-8 md:col-6 lg:col-4">
               <div className="rounded-xl bg-white px-10 pb-8 pt-11 shadow-lg">
                 <div className="integration-card-head flex items-center space-x-4">
-                  <Image src={image} alt="" />
+                  <Image src={image} width={80} height={80} alt="" />
                   <div>
-                    <h4 className="h4">{humanize(name)}</h4>
+                    <h4 className="h4">{humanize(name as string)}</h4>
                     {categories.map((category, i) => (
                       <span className="font-medium" key={i}>
                         {humanize(category)}
@@ -67,7 +67,7 @@ export default function IntegrateMedia({ integrations, categories }: IntegrateMe
                   </div>
                 </div>
                 <div className="my-5 border-y border-border py-5">
-                  <p>{parseInline(excerpt.slice(0, 80))}</p>
+                  <p>{parseInline((excerpt as string).slice(0, 80))}</p>
                 </div>
 
                 <Link

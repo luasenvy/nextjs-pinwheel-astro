@@ -2,7 +2,7 @@ import { slug as slugify } from "github-slugger";
 import Image from "next/image";
 import Link from "next/link";
 
-import type { PostItem } from "@/lib/data/posts";
+import type { PostItem } from "@/lib/data/blog";
 import dateFormat from "@/lib/dateFormat";
 import readingTime from "@/lib/readingTime";
 
@@ -18,7 +18,7 @@ export default function FeaturedBlog({ posts }: FeaturedBlogProps) {
     <>
       <h2 className="h4 mb-4">Featured Posts</h2>
       <div className="featured-posts row">
-        {posts.map(({ image, title, categories, slug, date, content }, i) => (
+        {posts.map(({ metadata: { image, title, categories, slug, date, content } }, i) => (
           <div key={i} className="mb-8 md:col-6">
             <div className="card">
               <Image className="card-img" width={235} height={304} src={image} alt={title} />

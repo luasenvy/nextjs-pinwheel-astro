@@ -1,6 +1,4 @@
-import { parseInline } from "marked";
 import type { StaticImageData } from "next/image";
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -23,9 +21,9 @@ export default function Banner({ title, button, image, content }: BannerProps) {
       <div className="container">
         <div className="row items-center">
           <div className="lg:col-6">
-            <h1 className="banner-title">{(parseInline(title) as string).replace("&amp;", "&")}</h1>
+            <h1 className="banner-title">{title}</h1>
 
-            <p className="mt-6">{(parseInline(content) as string).replace("&amp;", "&")}</p>
+            <p className="mt-6">{content}</p>
 
             {button.enable && (
               <Link className="btn btn-white mt-8" href={button.link}>

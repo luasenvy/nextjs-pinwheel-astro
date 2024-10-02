@@ -4,12 +4,13 @@ export default function readingTime(content: string) {
   let images = 0;
   const regex = /\w/;
 
-  const words = content.split(" ").filter((word) => {
-    if (word.includes("<img")) {
-      images += 1;
-    }
-    return regex.test(word);
-  }).length;
+  const words =
+    content?.split(" ").filter((word) => {
+      if (word.includes("<img")) {
+        images += 1;
+      }
+      return regex.test(word);
+    }).length ?? 0;
 
   const imageAdjust = images * 4;
   let imageSecs = 0;

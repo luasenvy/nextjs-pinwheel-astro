@@ -1,14 +1,16 @@
 "use client";
-import type { StaticImageData } from "next/image";
+
+import classnames from "classnames";
+
 import Image from "next/image";
 import { useState } from "react";
 import { Play } from "react-feather";
 import YouTube from "react-youtube";
 
 interface VideoProps {
-  height: number;
-  width: number;
-  src: StaticImageData;
+  height: number | string;
+  width: number | string;
+  src: string;
   title: string;
   video_id: string;
   video_height: string;
@@ -35,10 +37,11 @@ export default function Video({
             <Play />
           </button>
           <Image
-            width={width}
-            height={height}
+            width={parseInt(String(width || "640px"))}
+            height={parseInt(String(height || "480px"))}
+            style={{ objectFit: "contain" }}
             src={src}
-            alt={title}
+            alt={title || "Video Thumbnail"}
             className="inline h-auto max-w-full rounded-2xl"
           />
         </div>
@@ -47,7 +50,11 @@ export default function Video({
           <YouTube
             videoId={video_id}
             opts={videoOptions}
-            iframeClassName={`  aspect-video ${video_height} ${video_width} max-w-full bg-transparent rounded-2xl`}
+            iframeClassName={classnames(
+              "aspect-video max-w-full bg-transparent rounded-2xl",
+              video_height,
+              video_width
+            )}
           />
         </div>
       )}

@@ -6,8 +6,7 @@ import BlogCategories from "@/components/block/blog/BlogCategories";
 import Blogs from "@/components/block/blog/Blogs";
 import FeaturedBlog from "@/components/block/blog/FeaturedBlog";
 
-import { blog, blog_folder, pagination } from "@/lib/data/blog";
-import { categories, featureds, posts } from "@/lib/data/posts";
+import { blog, blog_folder, categories, featureds, pagination, posts } from "@/lib/data/blog";
 
 export default function BlogPage() {
   const currentPosts = posts.slice(0, pagination);

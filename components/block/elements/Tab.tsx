@@ -1,5 +1,5 @@
 export interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
-  label: string;
+  name: string;
 }
 
 export default function Tab({ ...props }: TabProps) {

@@ -3,8 +3,8 @@ import PageHeader from "@/components/block/PageHeader";
 import BlogCategories from "@/components/block/blog/BlogCategories";
 import Blogs from "@/components/block/blog/Blogs";
 
+import { categories as postCategories, posts } from "@/lib/data/blog";
 import { categories } from "@/lib/data/categories";
-import { categories as postCategories, posts } from "@/lib/data/posts";
 
 export default function CategoriesPage() {
   return (

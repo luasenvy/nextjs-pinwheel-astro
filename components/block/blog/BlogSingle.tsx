@@ -1,13 +1,13 @@
 import { slug as slugify } from "github-slugger";
-import { parse } from "marked";
 import Image from "next/image";
 import Link from "next/link";
 
+import { useMemo } from "react";
 import { FaRegCalendarAlt, FaRegClock, FaRegFolder, FaRegUserCircle } from "react-icons/fa";
 
 import Disqus from "@/components/block/Disqus";
 
-import type { PostItem } from "@/lib/data/posts";
+import type { PostItem } from "@/lib/data/blog";
 import dateFormat from "@/lib/dateFormat";
 import readingTime from "@/lib/readingTime";
 import { humanize } from "@/lib/textConverter";
@@ -17,14 +17,21 @@ export interface BlogSingleProps {
 }
 
 export default function BlogSingle({ post }: BlogSingleProps) {
-  const { title, author, date, categories, image, content } = post;
+  const PostArticle = useMemo(() => post?.Component && <post.Component />, [post]);
+
+  const { title, author, date, categories, image, content } = useMemo(
+    () => post?.metadata ?? {},
+    [post]
+  );
 
   return (
     <section className="section blog-single">
       <div className="container">
         <div className="row justify-center">
           <div className="lg:col-10">
-            <Image className="w-full rounded-xl" src={image} alt="" width={920} height={450} />
+            {image && (
+              <Image className="w-full rounded-xl" src={image} alt="" width={920} height={450} />
+            )}
           </div>
           <div className="mt-10 max-w-[810px] lg:col-9">
             <h1 className="h2">{title}</h1>
@@ -45,7 +52,7 @@ export default function BlogSingle({ post }: BlogSingleProps) {
                 </li>
                 <li className="mr-4 inline-block">
                   <FaRegFolder className="mr-2 -mt-1 inline-block" />
-                  {categories.map((category: string, index: number) => (
+                  {categories?.map((category: string, index: number) => (
                     <Link
                       key={`view-cat-link-${index}`}
                       href={`/categories/${slugify(category)}`}
@@ -59,7 +66,7 @@ export default function BlogSingle({ post }: BlogSingleProps) {
               </ul>
             </div>
 
-            <div className="content" dangerouslySetInnerHTML={{ __html: parse(content) }} />
+            <div className="content">{PostArticle}</div>
             <Disqus enable shortname="themefisher-template" />
           </div>
         </div>
