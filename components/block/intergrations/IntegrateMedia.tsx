@@ -3,10 +3,12 @@
 import classnames from "classnames";
 import { parseInline } from "marked";
 import Image from "next/image";
-import Link from "next/link";
+
 import React, { useState } from "react";
 
 import { AiOutlineArrowRight } from "react-icons/ai";
+
+import Link from "@/components/ViewTransitionLink";
 
 import type { IntegrationItem } from "@/lib/data/integration";
 import { humanize } from "@/lib/textConverter";

@@ -3,7 +3,10 @@ declare module "*.mdx" {
 
   interface Frontmatter {
     slug: string;
+    location: string;
     title: string;
+    excerpt: string;
+    job_nature: string;
     subtitle: string;
     image: string;
     author: string;

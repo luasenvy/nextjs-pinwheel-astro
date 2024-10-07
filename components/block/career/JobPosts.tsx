@@ -1,12 +1,14 @@
 "use client";
 
 import { marked } from "marked";
-import Link from "next/link";
+
 import { useState } from "react";
 
 import { AiOutlineArrowRight } from "react-icons/ai";
 
-import type { CareerItem } from "@/lib/data/careers";
+import Link from "@/components/ViewTransitionLink";
+
+import type { CareerItem } from "@/lib/data/career";
 import { humanize } from "@/lib/textConverter";
 
 interface JobPostsProps {
@@ -24,7 +26,9 @@ export default function JobPosts({
   career: { title, subtitle },
 }: JobPostsProps) {
   const [tab, setTab] = useState("");
-  const filterPost = !tab ? posts : posts.filter((post) => post.categories.includes(tab));
+  const filterPost = !tab
+    ? posts
+    : posts.filter(({ metadata }) => metadata.categories.includes(tab));
 
   return (
     <section className="section">
@@ -66,8 +70,8 @@ export default function JobPosts({
           {filterPost.map((post, i) => (
             <div className="mb-8 md:col-6" key={`post-${i}`}>
               <div className="rounded-xl bg-white p-5 shadow-lg lg:p-10">
-                <h3 className="h4">{post.title}</h3>
-                <p className="mt-6">{post.excerpt}</p>
+                <h3 className="h4">{post.metadata.title}</h3>
+                <p className="mt-6">{post.metadata.excerpt}</p>
                 <ul className="mt-6 flex flex-wrap items-center text-dark">
                   <li className="my-1 mr-8 inline-flex items-center">
                     <svg
@@ -83,7 +87,7 @@ export default function JobPosts({
                         fill="currentColor"
                       />
                     </svg>
-                    {post.job_nature}
+                    {post.metadata.job_nature}
                   </li>
                   <li className="my-1 mr-8 inline-flex items-center">
                     <svg
@@ -99,12 +103,12 @@ export default function JobPosts({
                         fill="currentColor"
                       />
                     </svg>
-                    {post.location}
+                    {post.metadata.location}
                   </li>
                   <li className="my-1 mr-8">
                     <Link
                       className="inline-flex items-center font-semibold text-primary"
-                      href={`/career/${post.slug}`}
+                      href={`/career/${post.metadata.slug}`}
                     >
                       Read More
                       <AiOutlineArrowRight className="ml-1.5 text-xl font-bold" />

@@ -1,7 +1,7 @@
 import { slug as slugify } from "github-slugger";
 import { parseInline } from "marked";
 
-import Link from "next/link";
+import Link from "@/components/ViewTransitionLink";
 
 import { humanize } from "@/lib/textConverter";
 
@@ -13,7 +13,7 @@ interface HeaderItem {
 }
 
 export interface PageHeaderProps {
-  title: string;
+  title?: string;
   content?: string;
   page_title?: string;
   index_title?: string;
@@ -22,7 +22,7 @@ export interface PageHeaderProps {
 }
 
 export default function PageHeader({
-  title,
+  title = "",
   index_title,
   page_title,
   slug,

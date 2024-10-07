@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import {
   IoCall,
   IoGlobeOutline,
@@ -33,6 +31,8 @@ import {
   IoLogoYoutube,
   IoMail,
 } from "react-icons/io5";
+
+import Link from "@/components/ViewTransitionLink";
 
 export type IconName =
   | "facebook"

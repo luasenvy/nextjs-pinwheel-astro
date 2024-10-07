@@ -6,6 +6,5 @@ export interface BlogViewProps {
 }
 
 export default function BlogView({ params: { slug } }: { params: { slug: string } }) {
-  console.info(slug, "<<<<<");
   return <BlogSingle post={posts.find(({ metadata: { slug: _slug } }) => slug == _slug)!} />;
 }

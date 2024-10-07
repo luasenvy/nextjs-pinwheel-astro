@@ -1,7 +1,6 @@
-import Link from "next/link";
-
 import Logo from "@/components/Logo";
 import Social, { type IconName } from "@/components/Social";
+import Link from "@/components/ViewTransitionLink";
 
 const footer = [
   {

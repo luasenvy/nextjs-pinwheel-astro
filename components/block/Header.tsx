@@ -1,12 +1,13 @@
 "use client";
 
 import classnames from "classnames";
-import Link from "next/link";
+
 import { usePathname } from "next/navigation";
 
 import { useEffect, useRef, useState } from "react";
 
 import Logo from "@/components/Logo";
+import Link from "@/components/ViewTransitionLink";
 
 const main = [
   { name: "Home", url: "/" },

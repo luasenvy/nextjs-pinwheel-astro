@@ -1,9 +1,10 @@
 import { slug as slugify } from "github-slugger";
 import Image from "next/image";
-import Link from "next/link";
 
 import { useMemo } from "react";
 import { FaRegCalendarAlt, FaRegClock, FaRegFolder, FaRegUserCircle } from "react-icons/fa";
+
+import Link from "@/components/ViewTransitionLink";
 
 import Disqus from "@/components/block/Disqus";
 
@@ -19,7 +20,7 @@ export interface BlogSingleProps {
 export default function BlogSingle({ post }: BlogSingleProps) {
   const PostArticle = useMemo(() => post?.Component && <post.Component />, [post]);
 
-  const { title, author, date, categories, image, content } = useMemo(
+  const { title, author, date, categories, image, content, slug } = useMemo(
     () => post?.metadata ?? {},
     [post]
   );
@@ -65,9 +66,14 @@ export default function BlogSingle({ post }: BlogSingleProps) {
                 </li>
               </ul>
             </div>
-
             <div className="content">{PostArticle}</div>
-            <Disqus enable shortname="themefisher-template" />
+            {slug && (
+              <Disqus
+                enable
+                shortname="themefisher-template"
+                settings={{ identifier: slug, title }}
+              />
+            )}
           </div>
         </div>
       </div>

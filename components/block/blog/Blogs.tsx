@@ -1,6 +1,7 @@
 import { slug as slugify } from "github-slugger";
 import Image from "next/image";
-import Link from "next/link";
+
+import Link from "@/components/ViewTransitionLink";
 
 import type { PostItem } from "@/lib/data/blog";
 

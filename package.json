@@ -16,7 +16,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "next": "^14.2.13"
+    "next": "^14.2.14"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
@@ -29,17 +29,17 @@
     "@types/mdx": "^2.0.13",
     "@types/node": "^22.7.4",
     "@types/prismjs": "^1.26.4",
-    "@types/react": "^18.3.10",
+    "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^8.7.0",
-    "@typescript-eslint/parser": "^8.7.0",
+    "@typescript-eslint/eslint-plugin": "^8.8.0",
+    "@typescript-eslint/parser": "^8.8.0",
     "autoprefixer": "^10.4.20",
     "classnames": "^2.5.1",
     "disqus-react": "^1.1.5",
     "eslint": "^8",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.3",
-    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.1",
     "github-slugger": "^2.0.0",
     "husky": "^9.1.6",

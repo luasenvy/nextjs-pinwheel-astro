@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
+
+import Link from "@/components/ViewTransitionLink";
 
 import GradientNumberBgImage from "@/public/images/gradient-number-bg.png";
 

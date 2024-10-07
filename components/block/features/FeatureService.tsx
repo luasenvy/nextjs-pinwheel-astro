@@ -1,7 +1,9 @@
 import type { StaticImageData } from "next/image";
 import Image from "next/image";
-import Link from "next/link";
+
 import { AiFillCheckCircle } from "react-icons/ai";
+
+import Link from "@/components/ViewTransitionLink";
 
 interface ButtonItem {
   enable: boolean;

@@ -17,6 +17,20 @@ export const career = {
     "Donec sollicitudin molestie malesda. Donec sollitudin molestie malesuada Mauris\npellentesque nec egestas non nisi Cras",
 };
 
+export const sidebar = {
+  title: "Apply today",
+  content:
+    "Management, investments. You’ll be on arguably the most important position at the company the front lines helping",
+  button: {
+    label: "Apply Now",
+    link: "#",
+    enable: true,
+  },
+  enable: true,
+};
+
+export type SidebarItem = typeof sidebar;
+
 export const content = {
   title: "Open positions",
   subtitle:

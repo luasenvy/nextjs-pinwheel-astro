@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ViewTransitionLink";
 
 const title = "Helping teams in the world with focus";
 const description =

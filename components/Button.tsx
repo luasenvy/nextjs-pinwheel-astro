@@ -1,5 +1,6 @@
 import classnames from "classnames";
-import Link from "next/link";
+
+import Link from "@/components/ViewTransitionLink";
 
 interface ButtonProps extends React.PropsWithChildren {
   href: string;

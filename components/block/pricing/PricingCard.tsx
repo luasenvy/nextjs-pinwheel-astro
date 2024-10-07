@@ -1,7 +1,8 @@
-import Link from "next/link";
 import React from "react";
 import * as Icon from "react-feather";
 import { BsPinAngleFill } from "react-icons/bs";
+
+import Link from "@/components/ViewTransitionLink";
 
 import type { PricingItem } from "@/lib/data/pricings";
 import { humanize } from "@/lib/textConverter";

@@ -3,8 +3,10 @@
 import Image from "next/image";
 
 import type { StaticImageData } from "next/image";
-import Link from "next/link";
+
 import { AiFillCheckCircle } from "react-icons/ai";
+
+import Link from "@/components/ViewTransitionLink";
 
 import Video from "@/components/block/Video";
 import HomepageTab, { type HomepageTabProps } from "@/components/block/home/HomepageTab";

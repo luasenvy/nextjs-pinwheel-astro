@@ -3,8 +3,9 @@
 import classnames from "classnames";
 import { slug as slugify } from "github-slugger";
 
-import Link from "next/link";
 import { useParams } from "next/navigation";
+
+import Link from "@/components/ViewTransitionLink";
 
 import { humanize } from "@/lib/textConverter";
 
