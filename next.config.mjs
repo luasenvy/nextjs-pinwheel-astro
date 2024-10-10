@@ -5,6 +5,15 @@ import remarkGfm from "remark-gfm";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 
+const separator = "\n---\n\n";
+
+function cleanContent(str) {
+  const trimed = str.trim();
+  return trimed
+    .substring(trimed.indexOf(separator) + separator.length)
+    .replace(/^import [^\s]+ from [^\n]+\n/gm, "");
+}
+
 function extendsMetadataContent() {
   return (ast, file) => {
     const metadata = ast.children.find(({ type }) => "mdxjsEsm" === type);
@@ -25,17 +34,6 @@ function extendsMetadataContent() {
     const {
       value: { value: title },
     } = properties.find(({ key }) => "title" === key.value);
-    const trimed = file.value.trim();
-    properties.push({
-      type: "Property",
-      method: false,
-      shorthand: false,
-      computed: false,
-      kind: "init",
-      key: { type: "Literal", value: "content" },
-      value: { type: "Literal", value: trimed.substring(trimed.indexOf("\n---\n\n", 1)) },
-    });
-
     properties.push({
       type: "Property",
       method: false,
@@ -48,6 +46,16 @@ function extendsMetadataContent() {
         value: encodeURIComponent(title.replace(/[^\d\w]/g, "-").toLowerCase()),
       },
     });
+
+    properties.push({
+      type: "Property",
+      method: false,
+      shorthand: false,
+      computed: false,
+      kind: "init",
+      key: { type: "Literal", value: "content" },
+      value: { type: "Literal", value: cleanContent(file.value) },
+    });
   };
 }
 
@@ -55,15 +63,6 @@ function extendsMetadataContent() {
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"],
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "joy1.videvo.net",
-        pathname: "/videvo_files/video/free/**",
-      },
-    ],
-  },
 };
 
 const withMDX = createMDX({
